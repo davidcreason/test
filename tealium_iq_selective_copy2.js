@@ -85,9 +85,17 @@
         console.debug("Calling -->  utui.automator[processClipboard]");
         utui.automator.processClipboard();
     }
+		
+		_updateList = function() {
+			jQuery("[id*=manage_bulk_select_]:checked").each(function(){
+				var title = jQuery(this).parentsUntil("h3").find(".container_title");
+				jQuery("#selected").append('<li class="list-group-item">'+ title +'</li>');
+			});
+		}
 
     window._tt_copy = _doCopy.bind(this);
     window._tt_paste = _doPaste.bind(this);
+    window._tt_update_list = _updateList.bind(this);
 }());
 
 tealiumTools.send({}); 

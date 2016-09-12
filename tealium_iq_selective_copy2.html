@@ -6,7 +6,7 @@
 	  <h2>Instructions:</h2>
 	  <p>Select the items from each tab that you would like to copy to another profile, click the "Copy Selected Items" button, switch to the new profile, and then click the "Paste Selected Items" button. Review the updates and Save/Publish as normal.</p>
 	  <br/><br/>
-  	<h2>Important Note:</h2>
+  	<h2>Important Note!:</h2>
 	<p><b>Be sure to always END with the Data Layer tab visible.</b> Switching out of the Data Layer tab will drop any selections within it. All other tabs do not have this issue</p>
   </div>
 		<!--<div class="row">
@@ -34,9 +34,8 @@
 		jQuery("button#paste_items").on("click", function (e) {
 			tTools.invokeFunction("_tt_doPaste");
 		});
-		jQuery("[id*=manage_bulk_select_]:checked").each(function(){
-			var title = jQuery(this).parentsUntil("h3").find(".container_title");
-			jQuery("#selected").append('<li class="list-group-item">'+ title +'</li>');
+		jQuery("[id*=manage_bulk_select_]").on("click", function() {
+			tTools.invokeFunction("_tt_update_list");
 		});
 	</script>
  
