@@ -20,6 +20,10 @@
       <button id="copy_items" class="btn btn-primary" data-func="_doCopy" value="copy">Copy Selected Items</button>
       <button id="paste_items" class="btn btn-primary" data-func="_doPaste" value="paste">Paste Selected Items</button>
     </div>
+		<div class="row">
+			<ul class="list-group" id="selected">
+			</ul>
+		</div>
   </div>
     
 
@@ -30,6 +34,14 @@
 		jQuery("button#paste_items").on("click", function (e) {
 			tTools.invokeFunction("_tt_doPaste");
 		});
+		jQuery("[id*=manage_bulk_select_]").on("click", function() {
+			jQuery("[id*=manage_bulk_select_]:checked").each(function(){
+				var title = jQuery(this).parentsUntil("h3").find(".container_title");
+				jQuery("#selected").append('<li class="list-group-item">'+ title +'</li>');
+			});
+		});
 	</script>
  
 </script>
+
+ '<li class="list-group-item">Cras justo odio</li>'

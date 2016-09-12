@@ -1,4 +1,3 @@
-
 (function() {
 
     var _functions = {
@@ -41,7 +40,7 @@
         'tags': "tabs_manage",
         'extensions': "tabs_customizations"
     };
-
+		
     _doCopy = function() {
         var _arr;
 
